@@ -6,14 +6,18 @@
 #define MATRIX_ROWS 8
 #define MATRIX_COLS 7
 
-#define MATRIX_ROW_PINS { D1, D0, D4, D7, F4, F5, F6, F7}
-#define MATRIX_COL_PINS { E6, B5, B4, B6, B2, B3, B1}
+#define MATRIX_ROW_PINS { F7, F6, F5, F4, B1, B3, B2, B4}
+#define MATRIX_COL_PINS { D3, D2, D1, D0, D4, C6, D7}
 
 
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
 #define GRAVE_ESC_ALT_OVERRIDE
+
+#define TAPPING_FORCE_HOLD
+#define RETRO_TAPPING
+#define TAPPING_TERM 200
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
