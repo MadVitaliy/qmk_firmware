@@ -17,7 +17,7 @@
 
 #define TAPPING_FORCE_HOLD
 #define RETRO_TAPPING
-#define TAPPING_TERM 200
+#define TAPPING_TERM 220
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
