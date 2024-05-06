@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
-enum custom_keycodes {
-  D_Q = SAFE_RANGE,
+enum tap_dance_codes {
+  D_Q,
   D_W,
   D_E,
   D_R,
@@ -13,7 +13,6 @@ enum custom_keycodes {
   D_I,
   D_O,
   D_P,
-  LAZO, 
 };
 
 enum layer_names {
@@ -25,6 +24,7 @@ enum layer_names {
 
 #define DIG MO(_Digits)
 #define TAP_SFT OSM(MOD_LSFT)
+
 #define BOUNCE_TIME 2 //ms
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Qwerty
@@ -95,9 +95,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 /*
  * ,------------------------------------------------++------+-----------------------------------------.
- * |      |      |      |      |      |      |      ||      |      |      |      |      |      |      |
+ * |      |      | MPRV | MPLY | MNXT |      |      ||      |KC_INS|      |      |      |      |      |
  * |------+------+------+------+------+-------------++------|------+------+------+------+------+------|
- * |      |      |      |      |      |      |      ||      |      |      |      |      |      |      |
+ * |      |      |      | VOLD | VOLU |      |      ||      |      |      |      |      |      |      |
  * |------+------+------+------+------+------|------++-------------+------+------+------+------+------|
  * | Shift|      |      |      |      |      |      ||      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------++------+------+------+------+------+------+------|
@@ -105,15 +105,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `------------------------------------------------++------+-----------------------------------------'
  */
  [_Digits] = LAYOUT(   
-    KC_NO,   KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,
-    KC_NO,   KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,
-    KC_TRNS, KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,
-    KC_TRNS, KC_TRNS,    KC_TRNS,    KC_NO,      KC_NO,      KC_NO,      KC_NO,
-                                                    
-    KC_NO,   KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,
-    KC_NO,   KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,
-    KC_NO,   KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,
-    KC_NO,   KC_NO,      KC_NO,      KC_NO,      KC_DELETE,  KC_BSPC,    KC_NO
+    KC_NO,    KC_NO,   KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,   KC_NO,
+    KC_NO,    KC_NO,   KC_NO,   KC_VOLD, KC_VOLU, KC_NO,   KC_NO,
+    KC_TRNS,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    KC_TRNS,  KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,
+                                            
+    KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_INS,  KC_NO,
+    KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,   KC_NO,
+    KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,   KC_NO,
+    KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_DELETE,KC_BSPC, KC_NO
   ),
 };
 
